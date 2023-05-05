@@ -29,7 +29,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (ft_strlen((char *)src));
 
 }
-char	*ft_strldup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*dest;
 	int	i;
@@ -48,7 +48,7 @@ char	*ft_strldup(const char *s)
 
 
 
-char    *ft_strjoin(char *s1, char *s2, int to_free)
+char    *ft_strjoin(char *s1, char *s2)
 {
 	size_t    s1_len;
 	size_t    s2_len;
@@ -66,4 +66,8 @@ char    *ft_strjoin(char *s1, char *s2, int to_free)
 	ft_strlcpy(new_str + s1_len, s2, s2_len + 1);
 	free(s1);
 	return(new_str);
+}
+char	*ft_strnjoin(char *s1, char *s2, int n)
+{
+	tkt ça marche
 }
