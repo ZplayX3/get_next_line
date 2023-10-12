@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/12 09:52:34 by tlachman          #+#    #+#             */
+/*   Updated: 2023/10/12 09:59:29 by tlachman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -65,9 +77,9 @@ char	*ft_makeline(t_list *lst, int n)
 char	*get_next_line(int fd)
 {
 	static t_buf	buffer = {.buffer = "", .mem = 0, .start = 0};
-	char		*dest;
-	int		end;
-	t_list		*lst;
+	char			*dest;
+	int				end;
+	t_list			*lst;
 
 	end = 0;
 	if (!buffer.buffer[0] && (read(fd, buffer.buffer, BUFFER_SIZE) <= 0))

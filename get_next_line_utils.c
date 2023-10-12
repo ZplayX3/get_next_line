@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/12 10:23:49 by tlachman          #+#    #+#             */
+/*   Updated: 2023/10/12 10:26:19 by tlachman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 void	ft_strcpy(char *dest, char *src, int start, int end)
@@ -36,7 +48,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 
 int	ft_lstsize(t_list *lst)
 {
-	int	x;
+	int		x;
 	t_list	*cursor;
 
 	x = 0;
