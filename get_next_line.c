@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlachman <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: trlachma <trlachma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 09:52:34 by tlachman          #+#    #+#             */
-/*   Updated: 2023/10/12 09:59:29 by tlachman         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:26:11 by trlachma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	end_line(int fd, int *end, t_buf *buff, t_list **lst)
 	{
 		ft_lstadd_back(lst, ft_lstnnew(buff));
 		clean_buffer(buff);
-		if (!read(fd, buff->buffer, BUFFER_SIZE))
+		if (read(fd, buff->buffer, BUFFER_SIZE) <= 0)
 			*end = 1;
 		buff->mem = 0;
 		buff->start = 0;
@@ -83,6 +83,7 @@ char	*get_next_line(int fd)
 
 	end = 0;
 	if (!buffer.buffer[0] && (read(fd, buffer.buffer, BUFFER_SIZE) <= 0))
+
 		return (NULL);
 	lst = NULL;
 	while (!end)
